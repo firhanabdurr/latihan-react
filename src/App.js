@@ -19,6 +19,11 @@ class App extends React.Component {
       count: count - 1
     }));
   };
+  handleClickReset = () => {
+    this.setState(({ count }) => ({
+      count: count * 0
+    }));
+  };
   render() {
 
     return (
@@ -30,9 +35,8 @@ class App extends React.Component {
 
         <p>Counter</p>
         <h1>{this.state.count}</h1>
-
-
         <button onClick={this.handleClickMin}>-1</button>;
+        <button onClick={this.handleClickReset}>Reset</button>;
         <button onClick={this.handleClickPlus}>+1</button>;
 
 
